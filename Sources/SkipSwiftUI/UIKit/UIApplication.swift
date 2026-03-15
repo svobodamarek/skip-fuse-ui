@@ -1,8 +1,11 @@
 // Copyright 2025–2026 Skip
 // SPDX-License-Identifier: MPL-2.0
 import Foundation
-import SkipAndroidBridge
 import SkipUI
+
+#if os(Android) || ROBOLECTRIC
+import SkipAndroidBridge
+#endif
 
 /* @MainActor */ open class UIApplication : NSObject /*, UIResponder */ {
     open class var shared: UIApplication {

@@ -1,4 +1,6 @@
 // Copyright 2025–2026 Skip
 // SPDX-License-Identifier: MPL-2.0
 @_exported import Observation
+#if os(Android) || ROBOLECTRIC
 @_exported import SkipAndroidBridge // For bridged Observation support
+#endif

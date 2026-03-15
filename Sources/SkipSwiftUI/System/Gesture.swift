@@ -3,6 +3,7 @@
 #if !ROBOLECTRIC && canImport(CoreGraphics)
 import CoreGraphics
 #endif
+import SkipBridge
 import SkipUI
 
 @MainActor @preconcurrency public protocol Gesture<Value> {
