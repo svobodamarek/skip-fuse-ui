@@ -27,7 +27,7 @@ import SkipUI
     }
 }
 
-struct ColorSpec : Hashable {
+struct ColorSpec : Hashable, @unchecked Sendable {
     let type: ColorType
     var opacity = 1.0
 
@@ -37,7 +37,7 @@ struct ColorSpec : Hashable {
     }
 }
 
-enum ColorType : Hashable {
+enum ColorType : Hashable, @unchecked Sendable {
     case accent
     case primary
     case secondary
