@@ -15,7 +15,7 @@ let package = Package(
         .package(url: "https://github.com/svobodamarek/skip-fuse.git", branch: "main"),
         .package(url: "https://source.skip.tools/skip-bridge.git", "0.16.7"..<"2.0.0"),
         .package(url: "https://source.skip.tools/swift-jni.git", "0.3.1"..<"2.0.0"),
-        .package(url: "https://github.com/svobodamarek/skip-ui.git", branch: "main")
+        .package(url: "https://github.com/svobodamarek/skip-ui.git", branch: "feature/telegram")
     ] + (android ? [
         .package(url: "https://source.skip.tools/skip-android-bridge.git", "0.6.1"..<"2.0.0"),
     ] : []),
