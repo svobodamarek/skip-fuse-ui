@@ -896,7 +896,7 @@ public struct AccessibilityTraits : SetAlgebra, OptionSet /* Added OptionSet con
     }
 
     public init() {
-        self = []
+        self.init(rawValue: 0)
     }
 
     public static let isButton = AccessibilityTraits(rawValue: 1 << 0) // For bridging
