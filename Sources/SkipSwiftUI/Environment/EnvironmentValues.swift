@@ -247,7 +247,7 @@ extension View {
             let view = $0.Java_viewOrEmpty
             if key.hasPrefix("userkey:") {
                 let ptr = SwiftObjectPointer.pointer(to: Box(value), retain: true)
-                let support = EnvironmentSupport(valueHolder: ptr)
+                let support = EnvironmentSupport(valueHolder: ptr, comparison: Java_environmentEquality(for: value))
                 return view.environment(bridgedKey: key, value: support)
             } else {
                 let value = EnvironmentValues.bridgeBuiltin(key: key, value: value)
@@ -264,7 +264,7 @@ extension View {
             let key = EnvironmentValues.key(for: T.self)
             if let object {
                 let ptr = SwiftObjectPointer.pointer(to: Box(object), retain: true)
-                let value = EnvironmentSupport(valueHolder: ptr)
+                let value = EnvironmentSupport(valueHolder: ptr, comparison: Java_environmentEquality(for: object))
                 return view.environment(bridgedKey: key, value: value)
             } else {
                 return view.environment(bridgedKey: key, value: nil)
