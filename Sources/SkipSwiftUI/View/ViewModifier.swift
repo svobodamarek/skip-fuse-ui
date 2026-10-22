@@ -13,6 +13,12 @@ import SkipUI
 }
 
 extension ViewModifier {
+    // Generic native peer thunks pass content without a label. Keep dispatch
+    // through the protocol requirement so the modifier retains its own body.
+    @MainActor @preconcurrency public func body(_ content: Self.Content) -> Self.Body {
+        return body(content: content)
+    }
+
     nonisolated public var Java_modifier: any SkipUI.ViewModifier {
         return SkipUI.EmptyModifier()
     }
